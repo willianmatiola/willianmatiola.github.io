@@ -1,0 +1,440 @@
+/* -----------------------------------------
+	07. Widgets Styling
+----------------------------------------- */
+.sidebar {
+	height: 100%;
+
+	&.sidebar-left {
+		border-right: solid 1px #ebebeb;	
+		.widget {
+			padding: 30px 30px 30px 0;
+
+			&.widget-attention {
+				padding: 30px 25px 25px;
+			}
+		}
+	}
+
+	&.sidebar-right {
+		border-left: solid 1px #ebebeb;	
+		.widget {
+			padding: 30px 0 30px 30px;
+
+			&.widget-attention {
+				padding: 30px 25px 25px;
+			}
+		}
+	}
+
+	.widget:last-child {
+		border-bottom: 0;
+		margin-bottom: 0;
+	}
+}
+
+.widget {
+	font-size: 13px;
+	border-bottom: solid 1px #ebebeb;
+	margin: 0;
+
+	p {
+		margin: 0 0 15px 0;
+	}
+
+	&.widget-attention {
+		background: #111;
+		color: #fff;
+
+		.widget-title {
+			background-color: #FFF;
+			color: #111;
+		}
+	}
+}
+
+.sidebar .widget:last-child,
+.widget p:last-child { /* Nullify bottom margin for last elements in widgets and sidebars */
+	margin-bottom: 0;
+}
+
+.widget-title {
+	font-family: $secondary-font;
+	font-weight: bold;	
+	text-align: center;
+	letter-spacing: 1px;
+	background: #161616;
+	color: #fff;		
+	font-size: 11px;		
+	padding: 13px 0;	
+	position: relative;
+	margin-bottom: 20px;
+
+	label {
+		text-transform: none;
+		display: block;
+		font-size: inherit;
+		margin: 0;
+		line-height: inherit;
+		font-weight: inherit;
+	}
+
+	a {
+		color: #FFF;
+	}
+}
+
+
+/* WIDGET: #List Widgets
+========================================= */
+.widget {
+	select {
+		width: 100%;
+		padding: 5px 10px;
+		border-radius: 0;
+		border: 1px solid $border-color;
+	}
+}
+
+.widget_meta,
+.widget_pages,
+.widget_categories,
+.widget_archive,
+.widget_nav_menu,
+.widget_recent_entries {
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		ul {
+			margin-left: 15px;
+		}
+
+		li {
+			line-height: normal;
+			display: block;
+			position: relative;
+
+			a {
+				display: block;
+				padding: 11px 0;
+				border-bottom: 1px solid $border-color;
+			}
+
+			&.current-cat,
+			&:hover {
+				> .count,
+				> .ci-count {
+
+				}
+			}
+
+			.count,
+			.ci-count {
+				position: absolute;
+				right: 0;
+				top: 8px;
+				font-size: 12px;
+				font-weight: bold;
+				font-style: italic;
+				transition: all 0.18s ease;
+				padding: 4px 3px;
+			}
+		}
+	}
+}
+
+.widget_recent_comments,
+.widget_rss {
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			display: block;
+			padding: 11px 0;
+			border-bottom: 1px solid $border-color;
+		}
+	}
+}
+
+.widget_pages,
+.widget_categories,
+.widget_archive {
+	select {
+		@include select-style;
+	}
+}
+
+/* WIDGET: #RSS
+========================================= */
+.widget_rss {
+	li {
+		a {
+			display: block;
+			margin-bottom: 5px;
+		}
+	}
+
+	.rss-date {
+		display: block;
+		text-transform: uppercase;
+		margin-bottom: 5px;
+		font-size: 12px;
+	}
+
+	cite {
+		display: block;
+		margin-top: 5px;
+	}
+}
+
+/* WIDGET: #Search
+========================================= */
+.searchform {
+	> div {
+		position: relative;
+	}
+
+	input[type="text"],
+	input[type="search"] {
+		// Styling for the search input if required
+	}
+
+	.searchsubmit {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+	}
+}
+
+
+/* WIDGET: #Flickr
+========================================= */
+.flickr_badge_image {
+	float: left;
+	width: 33.3333333333%;
+	
+	img {
+		width: 100%;		
+	}
+
+	a {
+		display: block;
+		line-height: 0;
+	}
+}
+
+/* WIDGET: #About
+========================================= */
+
+.widget_about {
+	text-align: center;
+
+	.widget_about_sig img {
+		margin: 5px auto 0;
+		display: block;
+	}
+}
+
+
+/* WIDGET: #Text Widget
+========================================= */
+
+.widget_text p:last-child {
+	margin-bottom: 0;
+}
+
+
+/* WIDGET: #Twitter
+========================================= */
+.widget_ci_twitter_widget {
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			margin-bottom: 12px;
+		}
+
+		li:first-child {
+			padding-top: 0;
+		}
+	}
+
+	.twitter-time {
+		display: block;
+		font-size: 0.85em;
+	}
+}
+
+
+/* WIDGET: #Calendar
+================================================== */
+#wp-calendar {
+	width: 100%;
+
+	a {
+		font-weight: bold;
+		font-style: italic;
+	}
+
+	caption {
+		text-align: left;
+		margin-top: 10px;
+		background: none repeat scroll 0 0 rgba(0, 0, 0, 0.03);
+		padding: 9px;
+	}
+
+	thead {
+		font-size: 10px;
+
+		th {
+			background: rgba(0, 0, 0, 0.1);
+			font-weight: bold;
+			padding: 8px;
+		}
+	}
+
+	tbody {
+		td { background: none; border: 1px solid rgba(0, 0, 0, 0.1); text-align: center; padding: 3px;}
+		td:hover { background: rgba(0, 0, 0, 0.1); }
+		.pad { background: none; }
+	}
+
+	tfoot {
+		#next { font-size: 10px; text-transform: uppercase; text-align: right; }
+		#prev { font-size: 10px; text-transform: uppercase; padding-top: 10px; }
+	}
+}
+
+
+/* WIDGET: #Newsletter
+================================================== */
+.widget_ci_newsletter {
+	input[type="email"] {
+		text-align: center;
+	}
+
+	input[type="submit"] {
+		width: 100%;
+	}
+}
+
+/* WIDGET: #Socials
+================================================== */
+.widget {
+	.socials {
+		float: none;
+		text-align: center;
+
+		li {
+			float: none;
+			display: inline-block;
+
+			a {
+				margin: 0 7px;
+				padding: 0;
+				font-size: 18px;
+			}
+		}
+	}
+}
+
+/* WIDGET: #Instagram
+================================================== */
+.ci-instagram-lite {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	
+	li {
+		float: left;
+		width: 33.3333333333%;
+	}	
+}
+
+.ci-instagram-lite-full {
+	.ci-instagram-lite {
+		padding-bottom: 30px; 
+	}
+}
+
+/* WIDGET: #Latest Posts
+================================================== */
+.widget_posts_list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+	.entry {
+		margin-bottom: 25px;		
+	}
+
+	li:last-child .entry {
+		margin-bottom: 0;
+	}
+
+	.entry-meta {
+		margin: 0 0 10px 0;
+		text-align: left;
+	}
+
+	.entry-featured {
+		margin-bottom: 15px;
+		margin-top: 10px;
+	}
+
+	.entry-title {
+		font-size: 13px;
+		text-align: left;
+		margin: 0;
+		padding: 0;
+	}
+
+	&.widget_posts_list_alt {
+
+		li {
+			position: relative;
+			padding-bottom: 10px;
+			margin-bottom: 10px;
+			min-height: 65px; 
+			border-bottom: solid 1px #ececec;			
+
+			&:last-child {
+				margin-bottom: 0;								
+			}
+		}
+
+		.entry {
+			margin: 0;			
+		}
+
+		.entry-title {
+			font-size: 13px;			
+		}
+
+		.entry-title, .entry-meta {
+			margin-left: 95px; 
+		}
+
+		.entry-meta {
+			line-height: 1;
+			margin-bottom: 5px;			
+		}
+
+		.entry-featured {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 80px;						
+			padding: 0;
+			margin: 0;
+		}
+
+	}
+
+}

@@ -1,0 +1,27 @@
+/* -----------------------------------------
+	05. Footer
+----------------------------------------- */
+#main-wrap {
+	position: relative;	
+	z-index: 1;
+	background: #fff;
+
+}
+
+#footer {
+	border-top: solid 1px #ebebeb;	
+	padding: 0;
+	text-align: center;
+
+	.widget:last-child {
+		margin: 0;
+	}
+
+	.site-bar {
+		border-top: 0;
+	}
+
+	.site-logo .tagline a {
+		display: inline;
+	}
+}

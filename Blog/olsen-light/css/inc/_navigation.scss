@@ -1,0 +1,126 @@
+/* -----------------------------------------
+	02. Main Navigation
+----------------------------------------- */
+
+.nav {
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.navigation {
+	@include clearfix();
+
+  // Navigation functional styles
+  li {
+		position: relative;
+		z-index: 1000;
+
+		.top-bar & {
+			z-index: 2000;
+		}
+	}
+  > li { float: left; }
+  ul { position: absolute; z-index: 300; top: -999em; }
+  li:hover > ul,
+  .sfHover > ul { top: 34px; }
+  li li:hover > ul,
+  li .sfHover > ul { top: -2px; left: 100%; }
+  li li li:hover > ul,
+  li li .sfHover > ul{ top: 0; left: 100%; }
+  a, .navigation a:visited { display: block; white-space: nowrap; }
+
+  a {
+
+    /* Global Menu Link Styles */
+  }
+
+  > li:first-child > a { }
+  > li:last-child > a { }
+
+  a:hover,
+  .sfHover > a {
+    text-decoration: none;    
+    /* First Level & Global Menu Link Hover Styles */
+  }
+
+  > li > a {
+    /* First Level Menu Link Styles */
+    margin-right: 30px;
+  }
+
+  > li ul a {
+    background: #fff;
+    padding: 8px;
+    margin-bottom: 1px;
+    letter-spacing: 1px;
+    font-size: 10px;
+    /* All Other Menu Level Link Styles */
+  }
+
+  > li ul a:hover,
+  > li ul .sfHover > a {
+    background: #ebebeb;
+    color: $primary-color;    
+    /* All Other Level Menu Link Hover Styles */
+  }
+
+  > li > a:hover,
+  > li.sfHover > a,
+  > li.sfHover > a:active {
+		color: $link-color;
+   /* WordPress First Level Current/Ancestor Hover Page Styles */
+  }
+
+  ul {
+    min-width: 200px;
+    background: #ebebeb;
+    padding: 2px;
+    /* All Lower Level Menu Container Styles */
+  }
+
+  a.sf-with-ul {
+    padding-right: 10px;
+    position: relative;
+    /* Styling for navigation arrows  ---------- */
+  }
+
+  &.sf-arrows .sf-with-ul:after {
+    content: '\f078';
+		font-family: FontAwesome;
+    position: absolute;
+    top: 41%;
+    right: -2px;
+    margin-top: -6px;
+		font-size: 8px;
+		font-weight: normal;
+  }
+
+  &.sf-arrows ul .sf-with-ul:after {
+ 		right: 8px;
+    top: 51%;
+		content: "\f054";
+
+    /* Styling for right facing arrows  ---------- */
+  }
+}
+
+.mobile-nav-trigger {
+	font-size: 16px;
+	line-height: 1;
+	display: none;
+
+	&:active,
+	&:focus {
+		color: $text-color;
+	}
+}
+
+.mobile-nav-location {
+	display: none;
+}

@@ -1,0 +1,278 @@
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content: " "; /* 1 */
+		display: table; /* 2 */
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+// Grid Mixins
+
+// Centered container element
+@mixin container-fixed() {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left:  ($grid-gutter-width / 2);
+	padding-right: ($grid-gutter-width / 2);
+	@include clearfix();
+}
+
+// Creates a wrapper for a series of columns
+@mixin make-row($gutter: $grid-gutter-width) {
+	margin-left:  ($gutter / -2);
+	margin-right: ($gutter / -2);
+	@include clearfix();
+}
+
+// Generate the extra small columns
+@mixin make-xs-column($columns, $gutter: $grid-gutter-width, $percentage_based: false) {
+	position: relative;
+	float: left;
+	// Prevent columns from collapsing when empty
+	min-height: 1px;
+	// Inner gutter via padding
+	padding-left:  ($gutter / 2);
+	padding-right: ($gutter / 2);
+
+	.rtl & {
+		float: right;
+	}
+
+	@if $percentage_based {
+		width: (100% / $columns);
+	} @else {
+		width: percentage(($columns / $grid-columns));
+	}
+}
+
+// Generate the small columns
+@mixin make-sm-column($columns, $gutter: $grid-gutter-width, $percentage_based: false) {
+	position: relative;
+	// Prevent columns from collapsing when empty
+	min-height: 1px;
+	// Inner gutter via padding
+	padding-left:  ($gutter / 2);
+	padding-right: ($gutter / 2);
+
+	// Calculate width based on number of columns available
+	@media (min-width: $screen-sm-min) {
+		float: left;
+
+		.rtl & {
+			float: right;
+		}
+
+		@if $percentage_based {
+			width: (100% / $columns);
+		} @else {
+			width: percentage(($columns / $grid-columns));
+		}
+	}
+}
+
+// Generate the small column offsets
+@mixin make-sm-column-offset($columns) {
+	@media (min-width: $screen-sm-min) {
+		margin-left: percentage(($columns / $grid-columns));
+
+		.rtl & {
+			margin-left: 0;
+			margin-right: percentage(($columns / $grid-columns));
+		}
+	}
+}
+
+@mixin make-sm-column-push($columns) {
+	@media (min-width: $screen-sm-min) {
+		left: percentage(($columns / $grid-columns));
+
+		.rtl & {
+			left: auto;
+			right: percentage(($columns / $grid-columns));
+		}
+	}
+}
+
+@mixin make-sm-column-pull($columns) {
+	@media (min-width: $screen-sm-min) {
+		right: percentage(($columns / $grid-columns));
+
+		.rtl & {
+			right: auto;
+			left: percentage(($columns / $grid-columns));
+		}
+	}
+}
+
+// Generate the medium columns
+@mixin make-md-column($columns, $gutter: $grid-gutter-width, $percentage_based: false) {
+	position: relative;
+	// Prevent columns from collapsing when empty
+	min-height: 1px;
+	// Inner gutter via padding
+	padding-left:  ($gutter / 2);
+	padding-right: ($gutter / 2);
+
+	// Calculate width based on number of columns available
+	@media (min-width: $screen-md-min) {
+		float: left;
+
+		.rtl & {
+			float: right;
+		}
+
+		@if $percentage_based {
+			width: (100% / $columns);
+		} @else {
+			width: percentage(($columns / $grid-columns));
+		}
+	}
+}
+
+// Generate the medium column offsets
+@mixin make-md-column-offset($columns) {
+	@media (min-width: $screen-md-min) {
+		margin-left: percentage(($columns / $grid-columns));
+
+		.rtl & {
+			margin-left: 0;
+			margin-right: percentage(($columns / $grid-columns));
+		}
+	}
+}
+@mixin make-md-column-push($columns) {
+	@media (min-width: $screen-md) {
+		left: percentage(($columns / $grid-columns));
+
+		.rtl & {
+			left: auto;
+			right: percentage(($columns / $grid-columns));
+		}
+	}
+}
+@mixin make-md-column-pull($columns) {
+	@media (min-width: $screen-md-min) {
+		right: percentage(($columns / $grid-columns));
+
+		.rtl & {
+			right: auto;
+			left: percentage(($columns / $grid-columns));
+		}
+	}
+}
+
+// Generate the large columns
+@mixin make-lg-column($columns, $gutter: $grid-gutter-width, $percentage_based: false) {
+	position: relative;
+	// Prevent columns from collapsing when empty
+	min-height: 1px;
+	// Inner gutter via padding
+	padding-left:  ($gutter / 2);
+	padding-right: ($gutter / 2);
+
+	// Calculate width based on number of columns available
+	@media (min-width: $screen-lg-min) {
+		float: left;
+
+		.rtl & {
+			float: right;
+		}
+
+		@if $percentage_based {
+			width: (100% / $columns);
+		} @else {
+			width: percentage(($columns / $grid-columns));
+		}
+	}
+}
+
+// Generate the large column offsets
+@mixin make-lg-column-offset($columns) {
+	@media (min-width: $screen-lg-min) {
+		margin-left: percentage(($columns / $grid-columns));
+
+		.rtl & {
+			margin-left: 0;
+			margin-right: percentage(($columns / $grid-columns));
+		}
+	}
+}
+@mixin make-lg-column-push($columns) {
+	@media (min-width: $screen-lg-min) {
+		left: percentage(($columns / $grid-columns));
+
+		.rtl & {
+			left: auto;
+			right: percentage(($columns / $grid-columns));
+		}
+	}
+}
+@mixin make-lg-column-pull($columns) {
+	@media (min-width: $screen-lg-min) {
+		right: percentage(($columns / $grid-columns));
+
+		.rtl & {
+			right: auto;
+			left: percentage(($columns / $grid-columns));
+		}
+	}
+}
+
+// Vertically center anything (IE9+),
+// remember to put -webkit-transform-style: preserve-3d; in parent element
+@mixin vertical-align {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+// Style placeholders
+@mixin placeholder {
+	::-webkit-input-placeholder {@content}
+	:-moz-placeholder           {@content}
+	::-moz-placeholder          {@content}
+	:-ms-input-placeholder      {@content}
+}
+
+// Ensuring text doesn't overflow its container and breaks nicely
+@mixin truncate-text($overflow: ellipsis) {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: $overflow; // clip, ellipsis, or a string
+}
+
+// Loading spinner
+@mixin spinner {
+	width: 40px;
+	height: 40px;
+	background-color: #FFF;
+
+	border-radius: 100%;
+	-webkit-animation: scaleout 1.0s infinite ease-in-out;
+	animation: scaleout 1.0s infinite ease-in-out;
+}
+
+// Theme Specific Mixins
+@mixin font-style($fz: 13px) {
+	text-transform: uppercase;
+	font-size: $fz;
+	line-height: normal;
+	font-weight: 400;
+}
+
+@mixin select-style {
+	display: block;
+	width: 100%;
+	padding: 6px 15px;
+	border-radius: 0;
+	font-size: 14px;
+	height: 40px;
+	font-weight: normal;
+	border: 1px solid $border-color;
+	background: #FFF;
+}

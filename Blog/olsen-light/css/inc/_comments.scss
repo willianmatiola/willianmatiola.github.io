@@ -1,0 +1,167 @@
+/* -----------------------------------------
+   06. Comments
+----------------------------------------- */
+#comments {
+	margin: 30px 0 0;
+}
+
+#comment-list {
+	margin: 0;
+	list-style: none;
+	padding: 0;
+
+	ol {
+		list-style: none;
+
+		@media ( max-width: $screen-xs-max ) {
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	.comment-body {				
+		position: relative;
+	}
+
+	> .comment:first-child > .comment-body {
+		border-top: none;
+	}
+
+	.pingback,
+	.trackback {
+		padding: 5px 0;
+		border-bottom: 1px solid $border-color;
+	}
+
+	.comment-content {
+		ol {
+			list-style: decimal;
+		}
+
+		> ul,
+		> ol {
+			margin: 20px 0;
+		}
+	}
+}
+
+.post-comments {
+	margin: 0 0 30px;
+}
+
+.comment-author .avatar {
+	width: 64px;
+	height: 64px;
+	float: left;
+	margin: 0 15px 15px 0;
+	overflow: visible;
+
+	@media ( max-width: $screen-xs-max ) {
+		display: none;
+	}
+}
+
+.comment-content {
+	overflow: hidden;
+	zoom: 1;
+	font-size: 13px;
+}
+
+.comment-metadata {
+	text-transform: uppercase;
+	letter-spacing: 3px;	
+	font-size: 11px;
+	margin: 0 0 5px;
+
+	a {
+		color: #bcbcbc;
+	}
+}
+
+.comment-reply-link {
+	@extend .btn;
+	border-radius: 0;
+	font-size: 10px;
+	text-transform: uppercase;
+	padding: 4px 10px;	
+	height: auto;
+	width: auto;
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	@media ( max-width: $screen-xs-max ) {
+		margin: 0;
+	}
+}
+
+.comment-author .fn {	
+	font-size: 13px;
+}
+
+.comment-author .says {
+	font-style: italic;
+	color: #bcbcbc;
+}
+
+.bypostauthor > article .fn:before {
+	font-family: FontAwesome;
+	content: "\f005";
+	margin: 0 5px 0 -2px;
+	position: relative;
+	top: -1px;
+	font-size: 11px;
+}
+
+#cancel-comment-reply-link {
+	font-size: 11px;
+	font-weight: normal;		
+	margin-top: 18px;
+}
+
+.form-allowed-tags,
+.comment-notes {
+	font-size: 12px;
+	line-height: 1.5;
+	color: rgba($text-color, 0.8);
+	
+}
+
+.comment-respond {
+	p {
+		margin-bottom: 10px;
+	}
+
+	.form-submit {
+		margin-bottom: 0;
+	}	
+
+	input[type="text"], input[type="email"], input[type="url"] {
+		width: 50%;
+	}
+}
+
+.comments-pagination {
+	padding: 10px 0;
+	border-top: 1px solid $border-color;
+	border-bottom: 1px solid $border-color;
+	margin: 15px 0;
+
+	a, span {
+		display: inline-block;
+		margin-right: 5px;
+	}
+}
+
+#comment-list + .comments-pagination {
+	margin-bottom: 0;
+}
+
+.comment-form-cookies-consent {
+	overflow: hidden;
+
+	input[type="checkbox"] {
+		float: left;
+		margin-right: 5px;
+	}
+}

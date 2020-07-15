@@ -1,0 +1,121 @@
+/* -----------------------------------------
+	08. WordPress Defaults
+----------------------------------------- */
+
+/* WordPress Galleries
+=================================== */
+.gallery {
+	@include make-row(10px);
+	margin-bottom: 15px;
+}
+
+.gallery-item {
+	margin-bottom: 10px;
+	img {
+		width: 100%;
+	}
+}
+
+@for $i from 1 through 9 {
+	.gallery-columns-#{$i} {
+		.gallery-item {
+			@include make-sm-column($i, 10px, true);
+			@include make-xs-column(6, 10px);
+		}
+	}
+}
+
+.gallery-caption {
+	background-color: rgba(0, 0, 0, 0.7);
+	color: #fff;
+	font-size: 12px;
+	line-height: 1.5;
+	margin: 0 0 0 5px;
+	max-height: 50%;
+	opacity: 0;
+	padding: 6px 8px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: left;
+	width: calc(100% - 10px);
+	transition: opacity 0.18s ease;
+}
+
+.gallery-caption:before {
+	content: "";
+	height: 100%;
+	min-height: 49px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.gallery-item:hover .gallery-caption {
+	opacity: 1;
+}
+
+.gallery-columns-6 .gallery-caption,
+.gallery-columns-7 .gallery-caption,
+.gallery-columns-8 .gallery-caption,
+.gallery-columns-9 .gallery-caption {
+	display: none;
+}
+
+
+/* WordPress Classes
+=================================== */
+
+/* Alignment */
+
+.alignnone {
+	margin: 5px 0 20px 0;
+
+	p & {
+		margin-bottom: 0;
+	}
+}
+
+.aligncenter {
+	display: block;
+	margin: 7px auto 7px auto;
+}
+
+.alignright {
+	float:right;
+	margin: 7px 0 7px 24px;
+}
+
+.alignleft {
+	float: left;
+	margin: 7px 24px 7px 0;
+}
+
+/* Captions */
+
+.wp-caption {
+	max-width: 100%;
+	margin-bottom: 15px;
+}
+
+.wp-caption img {
+	border: 0 none;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	width: auto;
+}
+
+.wp-caption .wp-caption-text {
+	font-size: 12px;
+	line-height: 17px;
+	margin: 3px 0 5px;
+	padding: 5px 0 0 0;
+	text-align: left;
+	font-style: italic;
+}
+
+.sticky {
+	/* Provide sticky styles */
+}

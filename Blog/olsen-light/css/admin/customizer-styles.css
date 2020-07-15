@@ -1,0 +1,49 @@
+#customize-control-instagram_auto {
+  padding-top: 20px;
+  border-top: 1px solid #D6D6D6;
+}
+
+.customize-control-description ul {
+  font-weight: bold;
+  font-style: normal;
+}
+
+.customizer-upgrade-wrap {
+  padding: 10px;
+}
+
+.customizer-upgrade-wrap a {
+  margin-bottom: 10px;
+}
+
+.customizer-upgrade-wrap a:last-child {
+  margin-bottom: 0;
+}
+
+.customizer-link {
+  font-style: normal;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  padding: 8px 0;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 2px;
+}
+
+.customizer-link:hover {
+  color: #fff;
+}
+
+.customizer-link.customizer-upgrade {
+  background: #68A834;
+  padding: 15px 0;
+}
+
+.customizer-link.customizer-documentation {
+  background: #FD6B04;
+}
+
+.customizer-link.customizer-review {
+  background: #104864;
+}
