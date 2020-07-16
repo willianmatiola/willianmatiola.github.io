@@ -9,9 +9,8 @@ h1 {
     font-size: 150px;
     font-weight: 900;
     letter-spacing: -3px;
-    line-height: 150px;
-    margin: 0;
-    padding-top: 50px;
+    line-height: 1;
+    margin-bottom: 40px;
     font-family: termina, Arial, Helvetica, sans-serif;
     text-transform: uppercase;
 }
@@ -23,11 +22,15 @@ h1 {
 .star{
     color: #FF4000;    
     font-size: 56px;
+    line-height: 1.4;
+    margin-bottom: 40px;
 }
 
 .specialtext{
     font-size: 21px;
     font-weight: 700;
+    line-height: 1;
+    margin-bottom: 40px;
     text-transform: uppercase;
     font-family: termina, Arial, Helvetica, sans-serif;
 }
@@ -36,6 +39,7 @@ h1 {
     font-size: 16px;
     font-weight: 400;
     font-family: termina, Arial, Helvetica, sans-serif;
+    margin-bottom: 80px;
 }
 
 .diamond{
@@ -48,6 +52,7 @@ h1 {
     transform: rotate(45deg);
     position: relative;
     overflow: hidden;
+    margin: 20px;
 }
 
 .diamond p{
