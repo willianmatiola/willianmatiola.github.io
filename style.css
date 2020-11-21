@@ -1,7 +1,7 @@
 body {
     margin: 240px 0 0;
     padding: 0 40px;
-    font-family: Helvetica Neue, Arial, sans-serif;
+    font-family: neue-haas-grotesk-display, sans-serif;
     color: #000;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -18,7 +18,7 @@ a {
 }
 
 h1 {
-    font-family: Helvetica Neue;
+    font-family: neue-haas-grotesk-text, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 48px;
@@ -28,9 +28,9 @@ h1 {
 }
 
 h2{
-    font-family: Helvetica Neue;
+    font-family: neue-haas-grotesk-display, sans-serif;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 20px;
     line-height: 140%;
     color: #000;
@@ -38,9 +38,9 @@ h2{
 }
 
 p {
-    font-family: Helvetica Neue;
+    font-family: neue-haas-grotesk-text, sans-serif;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 500;
     font-size: 18px;
     line-height: 170%;
     color: #666;
@@ -68,10 +68,10 @@ a:hover > .twitter {
  }
 
 .name {
-    font-family: Helvetica Neue;
+    font-family: neue-haas-grotesk-text, sans-serif;
     font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
+    font-weight: 500;
+    font-size: 18px;
     line-height: 100%;
     letter-spacing: -0.03em;
     color: #666;
@@ -91,6 +91,8 @@ a:hover > .twitter {
 }
 
 .menu-link a {
+    font-family: neue-haas-grotesk-text, sans-serif;
+    font-weight: 500;
     font-size: 18px;
     text-decoration: none;
     color: #666;
@@ -103,6 +105,8 @@ a:hover > .twitter {
 }
 
 .menu-link-active {
+    font-family: neue-haas-grotesk-text, sans-serif;
+    font-weight: 500;
     margin-right: 30px;
     font-size: 18px;
     color: #666;
@@ -142,7 +146,7 @@ a:hover > .twitter {
 .thumbnail {
     --width: 100%;
     width: var(--width);
-    height: 400px;
+    height: 500px;
     background-color: beige;
     overflow: hidden;
 }
@@ -160,9 +164,9 @@ a:hover > .twitter {
 } */
 
 .title-list li {
-    font-family: Helvetica Neue;
+    font-family: neue-haas-grotesk-text, sans-serif;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 500;
     font-size: 18px;
     line-height: 170%;
     color: #666;
@@ -179,11 +183,14 @@ a:hover > .twitter {
 }
 
 .about-info {
-    grid-area: about;
+    font-style: normal;
+    font-weight: 500;
 }
 
 .about-text {
     margin-top: 40px;
+    grid-area: about;
+    font-family: neue-haas-grotesk-text, sans-serif;
 }
 
 .about-text p + p {
@@ -203,35 +210,49 @@ a:hover > .twitter {
     grid-area: side-projects;
 }
 
+.title-list li{
+    margin-bottom: 8px;
+}
+
 .articles {
     grid-area: articles;
 }
 
 .engagements {
     grid-area: engagements;
+    padding-bottom: 100px;
 }
 
 .career-year {
-    font-family: Helvetica Neue;
+    font-family: neue-haas-grotesk-display, sans-serif;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 14px;
     line-height: 24px;
     align-items: center;
     color: #999;
     margin-right: 24px;
+    width: 33px;
 }
 
 .career-company {
-    font-family: Helvetica Neue;
+    font-family: neue-haas-grotesk-text, sans-serif;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 16px;
     line-height: 24px;
     align-items: center;
     color: #000;
 }
 
+a.stoika:hover {
+    color: #ff4000;
+}
+
+.tag {
+    font-size: 14px;
+    margin-left: 8px;
+}
 
 /* ##### RESPONSIVO ##### */
 
