@@ -178,7 +178,7 @@ a:hover > .twitter {
 .about {
     margin-top: 100px;
     display: grid;
-    grid-template: "about career" auto "side-projects career" auto "articles career" auto "engagements career" auto / 650px 244px;
+    grid-template: "about career" auto "education career" auto "side-projects career" auto "articles career" auto "engagements career" auto / 650px 244px;
     gap: 80px 130px; 
 }
 
