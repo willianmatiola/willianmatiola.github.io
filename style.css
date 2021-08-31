@@ -268,7 +268,7 @@ a.stoika:hover {
 
 @media (max-width: 1105px) {
     .about {
-        grid-template: "about" auto "career" auto "side-projects " auto "articles" auto "engagements" auto / minmax(0, 650px);
+        grid-template: "about" auto "education" auto "career" auto "side-projects " auto "articles" auto "engagements" auto / minmax(0, 650px);
     }
 
     .thumbnail {
